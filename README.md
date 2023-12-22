@@ -1,37 +1,42 @@
-# Presidential Speeches Corpus
+# Trump Speech Corpus
 
-This repository contains a dataset of speeches delivered by U.S. Presidents, with a focus on Donald Trump and Joe Biden. The original data was obtained from [source_name](https://millercenter.org/the-presidency/presidential-speeches). The initial dataset was sourced from [Kaggle](https://www.kaggle.com/datasets/littleotter/united-states-presidential-speeches?select=corpus.csv), but it only includes speeches up to Sept. 25th, 2019. To include speeches from Sept. 25th, 2019, until now, additional data was collected by web scraping and integrated into a new file, `all_presidential_speeches.csv`.
+This repository contains a corpus of Donald Trump's speeches collected from [THE MILLER CENTER](https://millercenter.org/the-presidency/presidential-speeches).
 
 ## Corpus Description
 
-The dataset comprises speeches from Donald Trump and Joe Biden during their respective presidential terms. The goal is to analyze the language used by these two presidents in their speeches.
-
-## Target Audience and Intended Use
-
-The target audience for this corpus includes researchers, linguists, and anyone interested in studying the language patterns of U.S. Presidents. The intended use is for natural language processing (NLP) and linguistic analysis.
-
-## Text Selection Criteria
-
-The speeches of Donald Trump and Joe Biden were selected based on their respective presidencies.
+The corpus consists of speeches given by Donald Trump, with each speech stored in a separate text file. The files are located in the `Trump_speech_txt_files` directory.
 
 ## Data Collection Process
 
-The original data was obtained from [United States Presidential Speeches](https://www.kaggle.com/datasets/littleotter/united-states-presidential-speeches?select=corpus.csv), and additional speeches from Sept. 25th, 2019, until now, were collected by web scraping.
+The data was collected by scraping speeches from  [THE MILLER CENTER](https://millercenter.org/the-presidency/presidential-speeches). Each speech is stored in a separate text file with a filename format of `SpeechTitle_date.txt`.
 
-## Cleaning and Preprocessing
+## Preprocessing and Annotations
 
-The Jupyter Notebook (`preprocessing_and_analysis.ipynb`) includes code for text cleaning, tokenization, lemmatization, and part-of-speech tagging using the SpaCy library.
+The Jupyter Notebook (`preprocess_and_annotate.ipynb`) contains the code for preprocessing and annotating the text files. The preprocessing includes tokenization, lemmatization, and parts-of-speech tagging using spaCy. The annotated corpus is then saved as a CSV file (`annotated_corpus.csv`).
 
-## Annotations
+## CSV File Structure
 
-The processed data includes cleaned text and lemmatized nouns. The annotations aim to facilitate linguistic analysis and NLP tasks.
+The CSV file contains the following columns:
 
-## File Formats
+- Filename: The name of the original text file in the data folder.
+- Title: The title of the speech.
+- Document: The original text exactly as it appears in the text file.
+- Noun: Preprocessed text of the document (lemmatized and containing only nouns).
+- Tokens: Tokenized text of the document.
+- Lemmas: Lemmatized text of the document.
+- Parts-of-speech: Parts of speech of all the tokens in the document.
 
-- Original data: CSV format (`all_presidential_speeches.csv`).
-- Processed data: CSV format (`processed_trump_biden_transcripts.csv`).
+## Usage
 
-## Quality Checks
+To reproduce the process or perform additional analysis:
 
-No specific quality checks have been performed, but the data cleaning and preprocessing steps were designed to enhance the quality of the text.
+1. Open the Jupyter Notebook (`preprocess_and_annotate.ipynb`).
+2. Run the cells in order to perform preprocessing and annotation.
+3. The annotated corpus will be saved as a CSV file (`annotated_corpus.csv`).
+
+Feel free to explore the dataset and use it for your own analysis.
+
+## License
+
+This dataset is provided for educational and research purposes. Please refer to the [data.millercenter](https://data.millercenter.org) for more details.
 
